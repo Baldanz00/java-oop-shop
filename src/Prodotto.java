@@ -17,16 +17,17 @@ per fare in modo che:
 - il prodotto esponga un metodo per avere il nome esteso, ottenuto concatenando 
 codice-nome */
 
-public int codice;
-public String nome;
-public String descrizone;
-public double prezzo;
-public double iva;
+private int codice;
+private String nome;
+private String descrizone;
+private double prezzo;
+private double iva;
 
 //costruttore che accetta parametri obbligatori
 public Prodotto(String nome, String descrizone, double prezzo, double iva){
     // this.codice = generaCodice(); //metodo per generare il codice random
     this(); //-> si riferisce al Prodotto che non accetta parametri che si trova a Prodotto.java.42
+    //L il this deve essere la prima istruzione
     this.nome = nome;
     this.descrizone = descrizone;
     this.prezzo = prezzo;
@@ -38,7 +39,7 @@ public Prodotto(String nome, String descrizone, double prezzo, double iva){
 //     Random random = new Random();
 //     return random.nextInt(9999) + 1000; //genera un codice random in quel range che io ho deciso
 //     }
-//correzione codice random nel cotruttore e no un metodo:
+//correzione codice random nel cotruttore :
 public Prodotto(){
     Random random = new Random();
     this.codice = random.nextInt(9999) + 1000;
@@ -57,4 +58,26 @@ public double prezzoConIva(){
 public String toString(){
     return nome + "-" + descrizone + prezzo + " € " + ", prezzo con iva: " + prezzoConIva();
 }
+
+public int getCodice() {
+    return codice;
+}
+
+public String getNome() {
+    return nome;
+}
+
+public String getDescrizone() {
+    return descrizone;
+}
+
+public double getPrezzo() {
+    return prezzo;
+}
+
+public double getIva() {
+    return iva;
+}
+
+
 }
